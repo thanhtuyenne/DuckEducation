@@ -1,0 +1,340 @@
+#all_learning_site {
+    width: 100%;
+    height: auto;
+}
+
+#first_learning_site {
+    width: 100%;
+    height: 120px;
+    border: 1px solid black;
+    display: flex;
+}
+
+#second_learning_site {
+    width: 100%;
+    height: 605px;
+    display: flex;
+    border-style: none solid solid;
+    border-width: 1px;
+}
+
+#one {
+    width: 20%;
+    height: 120px;
+}
+
+#two {
+    width: 80%;
+    height: 120px;
+    text-align: center;
+}
+
+#one_img {
+    width: 50%;
+    height: 120px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.one_one {
+    width: 100%;
+    height: 45%;
+    text-align: center;
+}
+
+.two_two {
+    width: 100%;
+    height: 45%;
+}
+
+#name_cour {
+    width: 70%;
+    height: 100%;
+    border: 1px solid black;
+    margin-top: 8px;
+    margin-left: 15%;
+    font-size: 40px;
+}
+
+.button {
+    width: 200px;
+    height: auto;
+    font-size: 30px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+/*********************************************/
+
+#sc_one {
+    width: 20%;
+    height: auto;
+}
+
+#sc_two {
+    width: 80%;
+    height: 605px;
+    overflow: auto;
+    border-style: none none none solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#nav_cour {
+    width: 100%;
+    height: 605px;
+    overflow: auto;
+}
+
+#f_div_cour {
+    width: 100%;
+    height: auto;
+}
+
+#ct {
+    width: 95%;
+    height: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+    overflow-x: auto;
+}
+
+#ul_1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.li_2 {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    font-size: 25px;
+}
+
+.li_2 a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.li_1,
+.li_3,
+.li_4,
+.li_5 {
+    font-size: 30px;
+    border-style: none none solid;
+    border-width: 1px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.ul_2,
+.ul_3,
+.ul_4,
+.ul_5 {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.display {
+    display: block;
+}
+
+.li_1:hover,
+.li_3:hover,
+.li_4:hover,
+.li_5:hover {
+    cursor: pointer;
+    border-style: none none none solid;
+    border-width: 10px;
+    border-color: blue;
+}
+
+.li_2 a:hover {
+    cursor: pointer;
+    border-style: none none none solid;
+    border-width: 10px;
+    border-color: rgb(4, 148, 16);
+}
+
+body {
+    scrollbar-gutter: stable both-edges;
+}
+
+.vertical-menu {
+    max-width: 304px;
+    display: none;
+}
+
+.vertical-menu a {
+    border-style: groove;
+    font-size: 25px;
+    text-align: center;
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.title {
+    background-color: #04AA6D;
+    color: white;
+    border-style: groove;
+    font-size: 25px;
+    text-align: center;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+#button_add_mooc {
+    border: groove;
+    text-align: center;
+    font-size: 25px;
+    background-color: #eee;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    width: 100%;
+}
+
+#button_add_mooc button:hover {
+    background-color: #ccc;
+}
+/*     */
+
+.panel-lession {
+    display: none;
+    font-family: sans-serif;
+}
+
+.course-name {
+    color: #1abc9c;
+}
+
+.lession-content,
+.test-content {
+    border: 1px solid #000;
+    padding: 10px 20px;
+    text-align: justify;
+    display: none;
+}
+
+.lession,
+.test-content {
+    padding-left: 20px;
+    color: #1abc9c;
+}
+
+.text-content {
+    color: thistle;
+    text-align: justify;
+}
+
+.lession-page {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+}
+
+.lession-title {
+    margin-right: 5px;
+}
+
+.lession-no,
+.plus {
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 6px;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.lession-no:hover,
+.plus:hover,
+.test-no:hover {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+.plus {
+    position: relative;
+}
+
+.active {
+    display: block !important;
+}
+
+.choose-plus {
+    border: 1px solid #000;
+    padding: 8px;
+    width: 100px;
+    box-shadow: 1px 2px 2px #777;
+    list-style-type: none;
+    position: absolute;
+    top: -110px;
+    right: 0;
+    display: none;
+    background-color: #fff;
+}
+
+.choose-content {
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.choose-content:hover {
+    color: turquoise;
+}
+
+.show {
+    display: block;
+}
+
+.test-no {
+    border: 1px solid #000;
+    padding: 6px;
+    border-radius: 6px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+#new-lession {
+    display: flex;
+}
+
+#lession-content-3 {
+    display: none;
+}
+
+#lession-content-2 {
+    display: none;
+}
+
+#mooc_2 {
+    display: none;
+}

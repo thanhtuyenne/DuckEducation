@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div.video {
+    top: 26px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video video {
+    padding-left: 10px;
+    padding-bottom: 20px;
+    float: left;
+    width: 100%;
+}
+
+.lesson-title {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.document {
+    padding: 10px;
+}
+
+.document h2 {
+    padding-top: 200px;
+}
+
+#more {
+    display: none;
+}
+
+.button {
+    text-align: center;
+}
+
+.li_2 a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.li_2 a:hover {
+    color: #fff;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+82,ffffff+100 */
+    background: rgb(0, 0, 0);
+    /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 82%, rgba(255, 255, 255, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 82%, rgba(255, 255, 255, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 82%, rgba(255, 255, 255, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.previous {
+    color: white;
+}
+
+.next {
+    color: white;
+}
+
+.show-read-more .more-text {
+    display: none;
+}
+
+.read-more {
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+}
+
+.read-more:hover {
+    background-color: white;
+    text-decoration-line: underline;
+}
+
+.lesson-title {
+    font-style: Arial;
+}
+
+#all_learning_site {
+    width: 100%;
+    height: auto;
+}
+
+#first_learning_site {
+    margin-top: 101px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+#second_learning_site {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+
+#one::-webkit-scrollbar {
+    display: none;
+}
+
+#one {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+}
+
+#two {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+
+#one_img {
+    width: 175px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.two_two {
+    margin-top: 88px;
+    width: 100%;
+}
+
+#name_cour {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.button {
+    width: 200px;
+    height: auto;
+    font-size: 30px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+/*********************************************/
+
+#sc_one {
+    margin: 5px;
+    width: 20%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#sc_two {
+    margin-top: 5px;
+    width: 80%;
+    height: 605px;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+#sc_two::-webkit-scrollbar{
+    display: none;
+}
+#nav_cour {
+    width: 100%;
+    height: 605px;
+    overflow: auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+#f_div_cour {
+    width: 100%;
+    height: auto;
+}
+
+#ct {
+    width: 95%;
+    height: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+    overflow-x: auto;
+}
+
+#ul_1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#ul_1>li {
+    border: 1px solid;
+    border-radius: 5px;
+    margin-bottom: 1px;
+}
+
+.li_2 {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    font-size: 25px;
+}
+
+.li_2 a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.li_1,
+.li_3,
+.li_4,
+.li_5 {
+    font-size: 30px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.ul_2,
+.ul_3,
+.ul_4,
+.ul_5 {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.display {
+    display: block;
+}
+
+.li_1:hover,
+.li_3:hover,
+.li_4:hover,
+.li_5:hover {
+    cursor: pointer;
+}
+
+.li_2 a:hover {
+    cursor: pointer;
+    color: #fff;
+}
+/* CSS */
+
+.button-60 {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: .375em;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #363636;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: center;
+    line-height: 1.5;
+    padding: calc(.5em - 1px) 1em;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.button-60:active {
+    border-color: #4a4a4a;
+    outline: 0;
+}
+
+.button-60:focus {
+    border-color: #485fc7;
+    outline: 0;
+}
+
+.button-60:hover {
+    border-color: #b5b5b5;
+}
+
+.button-60:focus:not(:active) {
+    box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+}

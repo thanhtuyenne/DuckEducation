@@ -1,0 +1,239 @@
+#all_learning_site {
+    width: 100%;
+    height: auto;
+}
+
+#first_learning_site {
+    width: 100%;
+    height: 120px;
+    border: 1px solid black;
+    display: flex;
+}
+
+#second_learning_site {
+    width: 100%;
+    height: 605px;
+    display: flex;
+    border-style: none solid solid;
+    border-width: 1px;
+}
+
+#one {
+    width: 20%;
+    height: 120px;
+}
+
+#two {
+    width: 80%;
+    height: 120px;
+    text-align: center;
+}
+
+#one_img {
+    width: 50%;
+    height: 120px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.one_one {
+    width: 100%;
+    height: 45%;
+    text-align: center;
+}
+
+.two_two {
+    width: 100%;
+    height: 45%;
+}
+
+#name_cour {
+    width: 70%;
+    height: 100%;
+    border: 1px solid black;
+    margin-top: 8px;
+    margin-left: 15%;
+    font-size: 40px;
+}
+
+.button {
+    width: 200px;
+    height: auto;
+    font-size: 30px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+
+/*********************************************/
+
+#sc_one {
+    width: 20%;
+    height: auto;
+}
+
+#sc_two {
+    width: 80%;
+    height: 605px;
+    overflow: auto;
+    border-style: none none none solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#nav_cour {
+    width: 100%;
+    height: 605px;
+    overflow: auto;
+}
+
+#f_div_cour {
+    width: 100%;
+    height: auto;
+}
+
+#ct {
+    width: 95%;
+    height: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+    overflow-x: auto;
+}
+
+#ul_1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.li_2 {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    font-size: 25px;
+}
+
+.li_2 a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.li_1,
+.li_3,
+.li_4,
+.li_5 {
+    font-size: 30px;
+    border-style: none none solid;
+    border-width: 1px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.ul_2,
+.ul_3,
+.ul_4,
+.ul_5 {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.display {
+    display: block;
+}
+
+.li_1:hover,
+.li_3:hover,
+.li_4:hover,
+.li_5:hover {
+    cursor: pointer;
+    border-style: none none none solid;
+    border-width: 10px;
+    border-color: blue;
+}
+
+.li_2 a:hover {
+    cursor: pointer;
+    border-style: none none none solid;
+    border-width: 10px;
+    border-color: rgb(4, 148, 16);
+}
+.video video {
+    padding-left: 10px;
+    padding-bottom: 20px;
+    float: left;
+    width: 100%;
+}
+
+.lesson-title {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.document {
+    padding: 10px;
+}
+
+.document h2 {
+    padding-top: 200px;
+}
+
+#more {
+    display: none;
+}
+
+.button {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: black;
+    color: white;
+}
+
+.next {
+    background-color: black;
+    color: white;
+}
+
+.show-read-more .more-text {
+    display: none;
+}
+
+.read-more {
+    color: black;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+}
+
+.read-more:hover {
+    background-color: white;
+    text-decoration-line: underline;
+}
+
+.lesson-title {
+    font-style: Arial;
+}

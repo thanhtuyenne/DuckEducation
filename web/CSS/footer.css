@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    flex-grow: 1;
+    background: rgb(39, 29, 24);
+    z-index: 10;
+}
+
+.footer div:last-child {
+    color: aliceblue;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+a:visited {
+    color: orange;
+}

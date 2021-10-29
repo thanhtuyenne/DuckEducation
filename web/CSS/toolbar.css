@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.header {
+    z-index: 10;
+    width: 100%;
+    float: left;
+    text-align: center;
+    position: fixed;
+    background-color: skyblue;
+    top: 0;
+}
+
+.header-contener {
+    width: 100%;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.contener {
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    min-width: auto;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1240px;
+}
+
+#logo_home {
+    width: 50px;
+    left: 39px;
+    top: 8px;
+    margin-right: 5px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+#searchIcon{
+    position: absolute;
+    left: 337px;
+    top: 4px;
+    cursor: pointer;
+}
+#searchIcon>img {
+    width: 30px;
+    height: 30px;
+
+}
+
+#searchInput {
+    box-sizing: content-box;
+    height: 40px;
+    width: 325px;
+    padding: 0 46px 0 10px;
+    border-color: #888;
+    border-radius: 35px;
+    border-style: solid;
+    border-width: 2px;
+    color: #333;
+    font-size: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#searchInput:focus {
+    border: 0px;
+}
+
+.search {
+    display: inline-block;
+    align-items: center;
+    position: relative;
+}
+
+.btn-search {
+    background-color: transparent;
+    border: none;
+    color: none;
+    cursor: pointer;
+}
+
+.button-38 {
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: .5rem !important;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .875rem !important;
+    font-weight: 600 !important ;
+    line-height: 1.25rem !important ;
+    padding: .75rem 1rem !important; 
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.button-38:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+.button-38:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.button-38:focus-visible {
+    box-shadow: none;
+}
+
+.side-right span:not(:first-child) {
+    margin-left: 10px;
+}
+
+ul .drop {
+    background: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    border-radius: 5px;
+}
+ul.header_ul>li>ul li{
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 5px;
+    height: 70px;
+}
+.header_ul>ul li {
+    padding: 0 10px;
+}
+
+.header_ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_ul>li {
+    list-style: none;
+    float: left;
+    width: 150px;
+    height: 65px;
+    position: relative;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.setting a {
+    cursor: pointer;
+}
+
+ul.drop {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    padding: 0;
+    border-radius: 0px;
+}
+
+ul.drop li {
+    display: none;
+    text-align: left;
+    width: 150px;
+    margin: 0px;
+    background: white;
+    border-radius: 0px;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+ul.drop li:hover {
+    background: rgb(235, 234, 234);
+}
+
+.setting {
+    background: rgb(80, 150, 255) !important;
+    border-radius: 0px;
+}
+
+ul.drop {
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+}
+
+li:hover {
+    background: rgba(218, 216, 216, 0.3);
+    border-radius: 5px 5px 0 0;
+}
+
+li:hover>ul.drop li {
+    display: flex;
+    z-index: 10;
+}
+
+ul.setting li {
+    background: rgb(109, 189, 255);
+    display: none;
+}
+
+ul.drop.setting li:hover {
+    background: rgb(86, 154, 255);
+    color: white;
+}
+
+@media only screen and (max-width: 500px) {
+    .option {
+        float: left;
+    }
+}
+
+#DuckEdu {
+    display: none;
+}
+
+.side-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: linear 2s;
+}
+.side-left>span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 25px;
+}
+.side-left span:hover>#DuckEdu {
+    display: inline-block;
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.tracking-in-expand {
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.list-result-search {
+    display: none;
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    background: transparent;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.result-search {
+    width: 75%;
+    height: 50px;
+    background: white;
+    padding: 5px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.result-search:hover {
+    background: #D1D5DB;
+}
+
+.result-search data {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+/* ----------------------------------------------
+* Generated by Animista on 2021-10-16 23:8:53
+* Licensed under FreeBSD License.
+* See http://animista.net/license for more info. 
+* w: http://animista.net, t: @cssanimista
+* ---------------------------------------------- */
+/**
+* ----------------------------------------
+* animation tracking-in-expand
+* ----------------------------------------
+*/
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* _______________________________ */
+.text--overflow{
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}

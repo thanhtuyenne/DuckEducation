@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1abc9c;
+    overflow: hidden;
+}
+
+::selection {
+    background: rgba(26, 188, 156, 0.3);
+}
+
+.container {
+    max-width: 630px;
+    padding: 0 20px;
+    margin: 170px auto;
+}
+
+.wrapper {
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title {
+    height: 90px;
+    background: #16a085;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.icon-settings {
+    margin-left: 15px;
+}
+
+.wrapper .title .text-settings {
+    margin-left: 10px;
+}
+
+.wrapper form {
+    padding: 30px 25px 50px 25px;
+}
+
+.wrapper .text-changepass {
+    text-align: center;
+    font-size: 24px;
+    margin-top: -20px;
+    color: #16a085;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.wrapper form .row {
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.wrapper form .row input {
+    height: 100%;
+    width: 64%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+form .row input:focus {
+    border-color: #16a085;
+    box-shadow: inset 0px 0px 2px 2px rgba(26, 188, 156, 0.25);
+}
+
+form .row input::placeholder {
+    color: #999;
+}
+
+form .text-pass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper form .pass {
+    margin: -8px 0 20px 0;
+}
+
+.wrapper form .pass a {
+    color: #16a085;
+    font-size: 17px;
+    text-decoration: none;
+    margin-left: 380px;
+}
+
+.wrapper form .pass a:hover {
+    text-decoration: underline;
+}
+
+.wrapper form .button input {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    background: #16a085;
+    border: 1px solid #16a085;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 15%;
+    height: 10%;
+    float: right;
+}
+
+form .button input:hover {
+    background: #12876f;
+}
+
+.wrapper form .signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.wrapper form .signup-link a {
+    color: #16a085;
+    text-decoration: none;
+}
+
+form .signup-link a:hover {
+    text-decoration: underline;
+}
+/*thong bao loi*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+    /*canh cho form mua nam giua man hinh*/
+    display: none;
+}
+
+.open {
+    display: flex;
+}
+
+.modal-container {
+    position: relative;
+    background-color: white;
+    width: 30%;
+    min-height: 20%;
+    animation: ModalFadeIn ease 0.5s;
+    margin: 0px 10px;
+}
+
+.modal .content-noti,
+.btn-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.modal .content-noti {
+    font-size: 24px;
+}
+
+.modal .btn-close {
+    margin-top: 35px;
+}
+
+.modal .btn-close button {
+    background-color: #16a085;
+    color: white;
+    border: none;
+    width: 22%;
+}
+
+.modal .btn-close input {
+    color: #fff;
+    font-size: 16px;
+    background: #16a085;
+    border: 1px solid #16a085;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 20%;
+    height: 10%;
+}
+
+.modal .btn-close input:hover {
+    background-color: #12876f;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #16a085;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
