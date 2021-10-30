@@ -21,7 +21,6 @@ public class lib {
     public static JavaBean.User DB_Login(String username, String password) throws SQLException, Exception {
 
         String sql = "SELECT * FROM tb_Login WHERE username ='" + username + "' and password='" + Core.MD5.getMd5(password) + "'";
-        System.out.println(sql);
         ResultSet rc = DB.SQL.connectDao.ExcuteQueryGetTable(sql);
         if (rc.next()) {
             String pattern = Core.MD5.getMd5(username);
@@ -29,36 +28,28 @@ public class lib {
 
             String role = "";
             String sql_getrole = "select id_typeuser from tb_User where ID= '" + pattern + "'";
-            System.out.println(sql_getrole);
             ResultSet rs = DB.SQL.connectDao.ExcuteQueryGetTable(sql_getrole);
             if (rs.next()) {
-                System.out.println("login/ rs.next():__________________________________");
                 int n = rs.getInt("id_typeuser");
                 switch (n) {
                     case 0:
                         role = "admin";
                         break;
                     case 1:
-                        role = "supporter";
-                        break;
-                    case 2:
                         role = "teacher";
                         break;
-                    case 3:
+                    case 2:
                         role = "student";
                         break;
                     default:
-                        System.out.println("Login throw EX...");
-                        throw new Exception("Username or password Wrong!");
+                        throw new Exception("Do not access this account!");
                 }
+                rs.close();
             }
-            System.out.println("role:" + role);
 
             String getuser = "select * from tb_student where ID_Student = '" + pattern + "'";
-            System.out.println(getuser);
             ResultSet rs0 = DB.SQL.connectDao.ExcuteQueryGetTable(getuser);
             if (rs0.next() && !role.isEmpty()) {
-                System.out.println("load user from DB: _____________________________________");
                 user.setUsername(username);
                 user.setID(pattern);
                 user.setName(rs0.getString("name"));
@@ -68,11 +59,10 @@ public class lib {
                 user.setImage("https://i.pravatar.cc/150?u=" + pattern);
                 user.setRole(role);
             }
-            rs.close();
             rs0.close();
             return user;
         }
-        return null;
+        throw new Exception("Username or password Wrong!");
     }
 
     public static void updateUser(User user) throws SQLException {
@@ -85,15 +75,12 @@ public class lib {
 
         if (role.equals("admin")) {
             String query = "update tb_Admin set [name] = '" + name + "', dob = '" + dob + "' , [address] = '" + address + "', email = '" + email + "' Where ID_Admin = '" + ID + "'";
-            System.out.println("update profile - query:\n" + query);
             DB.SQL.connectDao.ExcuteQueryUpdateDB(query);
         } else if (role.equals("student")) {
             String query1 = "update tb_Student set [name] = '" + name + "', dob = '" + dob + "' , [address] = '" + address + "', email = '" + email + "' Where ID_Student = '" + ID + "'";
-            System.out.println("update profile - query:\n" + query1);
             DB.SQL.connectDao.ExcuteQueryUpdateDB(query1);
         } else if (role.equals("teacher")) {
             String query2 = "update tb_Teacher set [name] = '" + name + "', dob = '" + dob + "' , [address] = '" + address + "', email = '" + email + "' Where ID_Teacher = '" + ID + "'";
-            System.out.println("update profile - query:\n" + query2);
             DB.SQL.connectDao.ExcuteQueryUpdateDB(query2);
         } else {
         }
@@ -123,7 +110,6 @@ public class lib {
                 + "                     @email = N'" + email + "',        -- nvarchar(50)\n"
                 + "                     @typeUser = " + typeUser + ",       -- int\n"
                 + "                     @ID_Subject = N'" + IDSupject + "'    -- nvarchar(10)";
-        System.out.println(sql);
         DB.SQL.connectDao.ExcuteQueryUpdateDB(sql);
         return false;
     }
@@ -135,7 +121,6 @@ public class lib {
         try {
             ResultSet rs = DB.SQL.connectDao.ExcuteQueryGetTable(sql);
             while (rs.next()) {
-                System.out.println(sql);
                 String name_certificate = rs.getString("name");
                 String img_certificate = rs.getString("img_Certificate");
                 list.add(new JavaBean.Certificate(name_certificate, img_certificate));
@@ -162,8 +147,20 @@ public class lib {
     public static void DB_ChangePassword(String newpw, String confirmpw, String username) throws SQLException {
         String sql = "update dbo.[tb_login] set [password] = '" + Core.MD5.getMd5(newpw) + "'\n"
                 + "where username = '" + username + "'";
-        System.out.println(sql);
         DB.SQL.connectDao.ExcuteQueryUpdateDB(sql);
+    }
+
+    public static String DB_GetEmail(String username) throws SQLException, Exception {
+        String ID = Core.MD5.getMd5(username);
+        String sql = "EXEC pro_getEmail @ID  = '" + ID + "'";
+        String email;
+        ResultSet rs = DB.SQL.connectDao.ExcuteQueryGetTable(sql);
+        if (rs.next()) {
+            email = rs.getString(1);
+        } else {
+            throw new Exception("Do not access this account!");
+        }
+        return email;
     }
 
 }

@@ -35,7 +35,6 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String control = request.getParameter("control");
-        System.out.println("Login servlet------------------");
         request.removeAttribute("message");
         if (control != null) {
             String username, password;
@@ -43,15 +42,12 @@ public class Login extends HttpServlet {
             password = request.getParameter("password");
             try {
                 JavaBean.User user = DB.lib.DB_Login(username, password);
-                System.out.println("login java role: " + user.getRole());
                 if (!user.getRole().isEmpty()) {
-                    System.out.println("Login success!-------------------");
                     ServletContext sv = getServletContext();
                     sv.setAttribute("user", user);
                     sv.setAttribute("role", user.getRole());
                     response.sendRedirect(request.getContextPath() + "/student");
                 } else {
-                    System.out.println("Login fail!");
                     request.setAttribute("message", "Username or password Wrong!");
                     RequestDispatcher dispatcher;
                     dispatcher = getServletContext().getRequestDispatcher(lib.Web.LOGIN);
@@ -59,8 +55,6 @@ public class Login extends HttpServlet {
                 }
                 return;
             } catch (Exception ex) {
-                System.out.println("login catch EX");
-                System.out.println(ex.getMessage());
                 ex.printStackTrace();
                 request.setAttribute("message", ex.getMessage());
             }

@@ -65,10 +65,6 @@
         <servlet-class>Controller.EditProfile</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>send_code2</servlet-name>
-        <servlet-class>Servlet.send_code2</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>new_password</servlet-name>
         <servlet-class>Servlet.new_password</servlet-class>
     </servlet>
@@ -127,10 +123,6 @@
     <servlet-mapping>
         <servlet-name>EditProfile</servlet-name>
         <url-pattern>/editProfile</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>send_code2</servlet-name>
-        <url-pattern>/send_code2</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>send_code</servlet-name>

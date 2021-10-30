@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import Core.JavaMailUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -32,29 +33,23 @@ public class send_code extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        System.out.println("------Servlet send_code.java");
-        String code = request.getParameter("code");
-        if (code != null) {
-            System.out.println("vertify code-------");
-            String codeVertify = session.getAttribute("code").toString();
-            System.out.println("codvertify-------" + codeVertify);
+
+        String control = request.getParameter("control");
+        if (control != null) {
+            String code = request.getParameter("code");
+            String codeVertify = JavaMailUtil.GetCode() + "";
             if (code.equals(codeVertify)) {
-                System.out.println("vertify access-----------");
                 RequestDispatcher dispatcher;
                 dispatcher = getServletContext().getRequestDispatcher(lib.Web.NEW_PASSWORD);
                 dispatcher.forward(request, response);
+                return;
             }
-        } else {
-            System.out.println("return send code-------");
-            RequestDispatcher dispatcher;
-            dispatcher = getServletContext().getRequestDispatcher(lib.Web.SEND_CODE);
-            dispatcher.forward(request, response);
         }
-
+        RequestDispatcher dispatcher;
+        dispatcher = getServletContext().getRequestDispatcher(lib.Web.SEND_CODE);
+        dispatcher.forward(request, response);
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

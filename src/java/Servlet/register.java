@@ -41,16 +41,15 @@ public class register extends HttpServlet {
             String lastname = request.getParameter("lastname");
             String username = request.getParameter("username");
             String email = request.getParameter("gmail");
-            String dob = request.getParameter("date");
+            String dob = request.getParameter("dob");
             String password = request.getParameter("confirm-password");
             String address = request.getParameter("address");
             try {
                 password = Core.MD5.getMd5(password);
-                DB.lib.DB_SignUp(username, password, firstname + " " + lastname, dob, address, email, 3, "");
+                DB.lib.DB_SignUp(username, password, firstname + " " + lastname, dob, address, email, 2, "");
                 request.setAttribute("message", "Register Success!");
             } catch (SQLException ex) {
                 request.setAttribute("message", ex.getMessage());
-                System.out.println("---------register error: " + ex.getMessage());
             }
         }
         RequestDispatcher dispatcher;

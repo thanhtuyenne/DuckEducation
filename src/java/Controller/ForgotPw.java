@@ -5,8 +5,13 @@
  */
 package Controller;
 
+import Core.JavaMailUtil;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,10 +35,32 @@ public class ForgotPw extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Forgot password");
+        
+        String control = request.getParameter("control");
+        if (control != null) {
+            String username = request.getParameter("username");
+            System.out.println("username : " + username);
+            String email;
+            try {
+                email = DB.lib.DB_GetEmail(username);
+                if (!email.isEmpty()) {
+                    JavaMailUtil.sendMail(email);
+                    int n = JavaMailUtil.GetCode();
+                    RequestDispatcher dispatcher;
+                    dispatcher = getServletContext().getRequestDispatcher(lib.Web.SEND_CODE);
+                    dispatcher.forward(request, response);
+                } else {
+
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(ForgotPw.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(lib.Web.FORGOT_PASSWORD);
         dispatcher.forward(request, response);
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

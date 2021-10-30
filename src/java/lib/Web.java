@@ -23,4 +23,8 @@ public class Web {
     public static final String EDIT = "/Resource/user/edit.jsp";
     public static final String NEW_PASSWORD = "/Resource/home/new_password.jsp";
     public static final String SEND_CODE = "/Resource/home/send_code.jsp";
+    public static final String DOTEST = "/Resource/doTest/dotest.jsp";
+    public static final String TEST_PREPARE = "/Resource/doTest/";
+    public static final String TEST_RESULT = "/Resource/doTest/test_result.jsp";
+
 }

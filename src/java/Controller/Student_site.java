@@ -30,6 +30,9 @@ public class Student_site extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Student site");
+        
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(lib.Web.DASHBOARD);
         dispatcher.forward(request, response);

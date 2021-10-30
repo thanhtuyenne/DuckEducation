@@ -32,14 +32,8 @@ public class User extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ServletContext sv = getServletContext();
-        JavaBean.User user = (JavaBean.User) sv.getAttribute("user");
-        //certificate
-        LinkedList<JavaBean.Certificate> result = DB.lib.getCertificatebyId(user.getID());
-        request.setAttribute("cer", result);
 
-        //profile
-        request.setAttribute("user", user);
+        System.out.println("User");
 
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(lib.Web.USER);

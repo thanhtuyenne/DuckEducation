@@ -22,14 +22,14 @@
         <div class="container">
             <div class="wrapper">
                 <div class="title"><span>Get your Password</span></div>
-                <form action="forgot_password">
+                <form action="forgotpw" method="POST">
                     <div class="row">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Email" required name="email">
+                        <input type="text" placeholder="username" required name="username">
                     </div>
 
                     <div class="row button">
-                        <input type="submit" id="myBtn2" value="Send">
+                        <input type="submit" id="myBtn2" value="Send" name="control">
                     </div>
                 </form>
                 <div class="signup-link">Login instead ? <a href="${pageContext.request.contextPath}/control?button-control=login">Login Now</a></div>

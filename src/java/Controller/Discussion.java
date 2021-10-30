@@ -30,6 +30,9 @@ public class Discussion extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Discussion");
+        
          RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(lib.Web.DISCUSSION);
         dispatcher.forward(request, response);

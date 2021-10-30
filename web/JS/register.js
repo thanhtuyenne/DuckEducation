@@ -8,16 +8,16 @@
 var rgGmail = /^[a-zA-Z]{1,}(\w){0,}@\w{2,}(\.[a-z]{2,}){1,}$/;
 var rgUsername = /^[a-zA-Z]{1,}[a-zA-Z0-9]{4,}$/;
 var rgPassword = /^[a-zA-Z0-9][a-zA-Z0-9.,!@#$%^&*()_+]{5,}$/;
-var rgName = /^[a-zA-Z\s]{3,}$/;
+var rgName = /^[a-zA-Z]{1,}[a-zA-Z\s]*$/;
 var rgAddress = /^[A-Za-z0-9'\.\-\s\,]{4,}$/;
+var rgDob = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
 
 
 $(document).ready(function () {
     $("#address").focusout(function () {
-        if (validusername()) {
+        if (validaddress()) {
             $("#address").css("border", "2px solid green");
             $("#errAddress").hide();
-
         } else {
             $("#errAddress").show();
         }
@@ -83,8 +83,23 @@ $(document).ready(function () {
     });
 
 });
+$("#dob").focusout(function () {
+    if (validdob()) {
+        $("#dob").css("border", "2px solid green");
+        $("#errDob").hide();
 
-
+    } else {
+        $("#errDob").show();
+    }
+});
+function validdob() {
+    var dob = $("#dob").val();
+    if (rgDob.test(dob)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 function validfirstname() {
     var firstname = $("#firstname").val();
     if (rgName.test(firstname)) {
@@ -121,7 +136,7 @@ function validPassword() {
 function validconfpass() {
     var password = $("#password").val();
     var confirm_password = $("#confirm-password").val();
-    if (confirm_password === password) {
+    if (confirm_password === password && confirm_password !== "") {
         return true;
     } else {
         return false;
@@ -130,16 +145,23 @@ function validconfpass() {
 
 function validemail() {
     var gmail = $("#gmail").val();
-    if (rgGmail.test(gmail)) {
+    if (rgGmail.test(gmail) && gmail !== "") {
         return true;
     } else {
         return false;
     }
 }
-
+function validaddress() {
+    var address = $("#address").val();
+    if (rgAddress.test(address) && address !== "") {
+        return true;
+    } else {
+        return false;
+    }
+}
 function checkAllData() {
     if (validfirstname() && validlastname() && validusername() && validPassword()
-            && validconfpass() && validemail()) {
+            && validconfpass() && validemail() & validdate()) {
         $("#myModal").hide();
         return true;
     } else {
@@ -152,11 +174,14 @@ function checkAllData() {
 function hide() {
     var span = document.getElementsByClassName("close")[0];
     var modal = document.getElementById("myModal");
-    modal.classList.remove('show');
+
+    modal.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     var modal = document.getElementById("myModal");
-    modal.classList.remove('show');
-};
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 

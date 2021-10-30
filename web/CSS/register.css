@@ -156,7 +156,7 @@ form .signup-link a:hover {
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    padding-top: 350px;
+    /*padding-top: 350px;*/
     /* Location of the box */
     left: 0;
     top: 0;

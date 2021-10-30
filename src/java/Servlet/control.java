@@ -30,32 +30,49 @@ public class control extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher;
+
+        System.out.print("Servlet control call ---->");
+
         String pattern = request.getParameter("button-control");
-        if (pattern.equals("login")) {
-            response.sendRedirect(request.getContextPath() + "\\login");
-        } else if (pattern.equals("signup")) {
-            response.sendRedirect(request.getContextPath() + "\\signup");
-        } else if (pattern.equals("forgot-password")) {
-            response.sendRedirect(request.getContextPath() + "\\forgotpw");
-        } else if (pattern.equals("setting")) {
-            response.sendRedirect(request.getContextPath() + "\\setting");
-        } else if (pattern.equals("logout")) {
-            response.sendRedirect(request.getContextPath() + "\\logout");
-        } else if (pattern.equals("message")) {
-            response.sendRedirect(request.getContextPath() + "\\message");
-        } else if (pattern.equals("study")) {
-            response.sendRedirect(request.getContextPath() + "\\study");
-        } else if (pattern.equals("discussion")) {
-            response.sendRedirect(request.getContextPath() + "\\discussion");
-        } else if (pattern.equals("user")) {
-            response.sendRedirect(request.getContextPath() + "\\user");
-        } else if (pattern.equals("editProfile")) {
-            response.sendRedirect(request.getContextPath() + "\\editProfile");
-        } else if (pattern.equals("save")) {
-            response.sendRedirect(request.getContextPath() + "\\user");
-        } else if (pattern.equals("sendcode")) {
-            response.sendRedirect(request.getContextPath() + "\\send_code");
+        switch (pattern) {
+            case "login":
+                response.sendRedirect(request.getContextPath() + "\\login");
+                break;
+            case "signup":
+                response.sendRedirect(request.getContextPath() + "\\signup");
+                break;
+            case "forgot-password":
+                response.sendRedirect(request.getContextPath() + "\\forgotpw");
+                break;
+            case "setting":
+                response.sendRedirect(request.getContextPath() + "\\setting");
+                break;
+            case "logout":
+                response.sendRedirect(request.getContextPath() + "\\logout");
+                break;
+            case "message":
+                response.sendRedirect(request.getContextPath() + "\\message");
+                break;
+            case "study":
+                response.sendRedirect(request.getContextPath() + "\\study");
+                break;
+            case "discussion":
+                response.sendRedirect(request.getContextPath() + "\\discussion");
+                break;
+            case "user":
+                response.sendRedirect(request.getContextPath() + "\\user");
+                break;
+            case "editProfile":
+                response.sendRedirect(request.getContextPath() + "\\editProfile");
+                break;
+            case "save":
+                response.sendRedirect(request.getContextPath() + "\\user");
+                break;
+            case "sendcode":
+                response.sendRedirect(request.getContextPath() + "\\send_code");
+                break;
+            default:
+                break;
         }
     }
 

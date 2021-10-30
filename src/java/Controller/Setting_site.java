@@ -35,6 +35,9 @@ public class Setting_site extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        System.out.println("Setting site");
+
         String control = request.getParameter("changepass");
         if (control != null) {
             ServletContext sv = getServletContext();

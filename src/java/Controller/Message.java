@@ -30,6 +30,9 @@ public class Message extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Message");
+        
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(lib.Web.MESSAGE);

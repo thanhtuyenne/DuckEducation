@@ -30,6 +30,9 @@ public class Log_out extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Log out");
+        
         request.getSession().removeAttribute("role");
         ServletContext sv = getServletContext();
         sv.removeAttribute("user");

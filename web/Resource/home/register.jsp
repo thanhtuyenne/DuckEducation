@@ -42,12 +42,12 @@
 
                         <div class="box">
                             <input class="inline row" type="text" name="gmail" id="gmail" placeholder="Gmail" required>
-                            <span class="error" id="errEmail">Email don't valid</span>
+                            <span class="error" id="errGmail">Email don't valid</span>
                         </div>
 
                         <div class="box">
-                            <input class="inline row" type="date" name="date" id="date" placeholder="Date of Birth" required>
-                            <span class="error" id="errDob">Date of Birth must be less than current day</span>
+                            <input class="inline row" type="date" name="dob" id="dob" placeholder="Date of Birth" required>
+                            <span class="error" id="errDob">Date of Birth don't valid</span>
                         </div>
 
                         <div class="box">

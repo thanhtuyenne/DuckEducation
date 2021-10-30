@@ -139,7 +139,7 @@
                             </div>
 
                         </div>
-                         <div class="modal-footer">
+                        <div class="modal-footer">
                             <button type="submit" class="button-38 btn btn-primary btn-lg" value="login" name="button-control" onclick="sendRedirect(this)" >Enroll</button>
                         </div>
                     </div>

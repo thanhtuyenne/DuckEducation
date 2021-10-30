@@ -13,24 +13,21 @@
         <!-- <title>Login Form | CodingLab</title> -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/login-signup-register.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-        <!--<script type="text/javascript" src="${pageContext.request.contextPath}/JS/forgot-password.js"></script>-->
         <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>  <%--import JSTL --%>
 
     </head>
 
     <body>
-
         <div class="container">
             <div class="wrapper">
                 <div class="title"><span>Enter Vetify Code</span></div>
-                <form action="${pageContext.request.contextPath}/send_code" method="get">
+                <form action="send_code" method="get">
                     <div class="row">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Code" name="code" required>
                     </div>
-
                     <div class="row button">
-                        <input type="submit" id="myBtn"  name="summit">
+                        <input type="submit" id="myBtn" value="sendcode"  name="control">
                     </div>
                 </form>
             </div>
@@ -43,8 +40,6 @@
                 <p> There is no account with this email</p>
             </div>
         </div>
-
-
     </script>
 </body>
 </html>

@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 public class Dao {
 
     Connection conn;
-    private static final String DB_URL = "jdbc:sqlserver://ADMIN:1433;databaseName=DuckEdu";
+    private static final String DB_URL = "jdbc:sqlserver://localhost:1433;databaseName=DuckEdu";
     private static final String USER_NAME = "sa";
     private static final String PASSWORD = "123456";
 

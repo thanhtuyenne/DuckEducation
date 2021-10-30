@@ -34,12 +34,14 @@ public class EditProfile extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Edit Profile");
+        
         String control = request.getParameter("button-control");
         ServletContext sv = getServletContext();
         JavaBean.User user = (JavaBean.User) sv.getAttribute("user");
 
         if (control != null) {
-            System.out.println("update profile-------------------");
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String dob = request.getParameter("dob");
