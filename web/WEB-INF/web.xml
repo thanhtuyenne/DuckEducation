@@ -4,13 +4,21 @@
         <param-name>role</param-name>
         <param-value>null</param-value>
     </context-param>
+    <filter>
+        <filter-name>Login_Request</filter-name>
+        <filter-class>Servlet.filter.Login_Request</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Login_Request</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>control</servlet-name>
         <servlet-class>Servlet.control</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>Servlet.Login</servlet-class>
+        <servlet-class>Controller.Login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Student_site</servlet-name>
@@ -19,10 +27,6 @@
             <param-name>student parameter</param-name>
             <param-value>Value</param-value>
         </init-param>
-    </servlet>
-    <servlet>
-        <servlet-name>Setting_site</servlet-name>
-        <servlet-class>Controller.Setting_site</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Log_out</servlet-name>
@@ -72,6 +76,10 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>Servlet.register</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Setting</servlet-name>
+        <servlet-class>Controller.Setting_site</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>control</servlet-name>
         <url-pattern>/control</url-pattern>
@@ -83,10 +91,6 @@
     <servlet-mapping>
         <servlet-name>Student_site</servlet-name>
         <url-pattern>/student</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Setting_site</servlet-name>
-        <url-pattern>/setting</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Log_out</servlet-name>
@@ -136,9 +140,16 @@
         <servlet-name>Register</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Setting</servlet-name>
+        <url-pattern>/setting</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

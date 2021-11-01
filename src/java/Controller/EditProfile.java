@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import JavaBean.Constants;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,13 +36,16 @@ public class EditProfile extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        System.out.println("Edit Profile");
-        
-        String control = request.getParameter("button-control");
-        ServletContext sv = getServletContext();
-        JavaBean.User user = (JavaBean.User) sv.getAttribute("user");
 
+        System.out.println("Edit Profile");
+
+        String control = request.getParameter("button-control");
+//        ServletContext sv = getServletContext();
+//        JavaBean.User user = (JavaBean.User) sv.getAttribute("user");
+        HttpSession session = request.getSession();
+        JavaBean.User user = (JavaBean.User) session.getAttribute(Constants.SESSION_USER_KEY);
+        request.setAttribute("user", user);
+//        System.out.println(user.getName());
         if (control != null) {
             String name = request.getParameter("name");
             String email = request.getParameter("email");
@@ -53,16 +58,17 @@ public class EditProfile extends HttpServlet {
 
             try {
                 DB.lib.updateUser(user);
+                request.setAttribute("user", user);
+                RequestDispatcher dispatcher;
+                dispatcher = getServletContext().getRequestDispatcher(lib.Web.USER);
+                dispatcher.forward(request, response);
+                return;
             } catch (SQLException ex) {
-                Logger.getLogger(EditProfile.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.print("have Error value: ");
+                System.out.println(ex.getMessage());
+                System.out.print(" at ---->");
             }
-            request.setAttribute("user", user);
-            RequestDispatcher dispatcher;
-            dispatcher = getServletContext().getRequestDispatcher(lib.Web.USER);
-            dispatcher.forward(request, response);
-            return;
         }
-        request.setAttribute("user", user);
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(lib.Web.EDIT);
         dispatcher.forward(request, response);

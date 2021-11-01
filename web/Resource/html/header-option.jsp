@@ -3,7 +3,7 @@
         <div class="contener">
             <div class="side-left">
                 <span>
-                    <a href="${pageContext.request.contextPath}/${applicationScope['role']}" class="logo"><img id="logo_home" src="${pageContext.request.contextPath}/Resource/img/logo.svg" alt="logo"></a>
+                    <a href="${pageContext.request.contextPath}/${sessionScope.role}" class="logo"><img id="logo_home" src="${pageContext.request.contextPath}/Resource/img/logo.svg" alt="logo"></a>
                     <div id="DuckEdu">
                         DUCK EDU
                     </div>
@@ -54,7 +54,7 @@
                             </li>
                             <li><img class="icon" src="${pageContext.request.contextPath}/Resource/img/setting.png" alt="">
                                 <ul class="drop setting">
-                                    <a style="width: 100%;" href="${pageContext.request.contextPath}/Resource/user/">
+                                    <a style="width: 100%;" href="${pageContext.request.contextPath}/control?button-control=user">
                                         <li>
                                             <img style="width: 40px; padding-right: 10px;" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" /> User
                                         </li>

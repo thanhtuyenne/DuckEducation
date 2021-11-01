@@ -34,6 +34,9 @@ public class register extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Register");
+        
         request.removeAttribute("message");
         String btn = request.getParameter("btn-register");
         if (btn != null) {

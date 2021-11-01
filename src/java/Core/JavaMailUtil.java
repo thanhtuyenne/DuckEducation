@@ -40,7 +40,7 @@ public class JavaMailUtil {
         return code;
     }
 
-    public static void sendMail(String recepient) throws MessagingException {
+    public JavaMailUtil(String recepient) {
         Thread thread = new Thread(new Runnable() {
             private Message prepareMessage(Session session, String myAccountEmail, String recepient) {
                 try {
@@ -54,9 +54,7 @@ public class JavaMailUtil {
                     message.setContent(htmlCode, "text/html");
                     return message;
                 } catch (AddressException ex) {
-                    Logger.getLogger(JavaMailUtil.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (MessagingException ex) {
-                    Logger.getLogger(JavaMailUtil.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 return null;
             }
@@ -83,7 +81,6 @@ public class JavaMailUtil {
                 try {
                     Transport.send(message);
                 } catch (MessagingException ex) {
-                    Logger.getLogger(JavaMailUtil.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 System.out.println("mess sent successfully");
@@ -92,4 +89,55 @@ public class JavaMailUtil {
         thread.start();
     }
 
+//    public void sendMail(String recepient) throws MessagingException {
+//        Thread thread = new Thread(new Runnable() {
+//            private Message prepareMessage(Session session, String myAccountEmail, String recepient) {
+//                try {
+//                    Message message = new MimeMessage(session);
+//                    message.setFrom(new InternetAddress(myAccountEmail));
+//                    message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
+//                    message.setSubject("my firt email form java app");
+//
+//                    String htmlCode = " <h2>Code to Get New Password</h2>\n"
+//                            + "  <p>" + JavaMailUtil.code + "</p>";
+//                    message.setContent(htmlCode, "text/html");
+//                    return message;
+//                } catch (AddressException ex) {
+//                    Logger.getLogger(JavaMailUtil.class.getName()).log(Level.SEVERE, null, ex);
+//                } catch (MessagingException ex) {
+//                    Logger.getLogger(JavaMailUtil.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//                return null;
+//            }
+//
+//            @Override
+//            public void run() {
+//                // TODO code application logic here
+//                Properties properties = new Properties();
+//                properties.put("mail.smtp.auth", "true");
+//                properties.put("mail.smtp.starttls.enable", "true");
+//                properties.put("mail.smtp.host", "smtp.gmail.com");
+//                properties.put("mail.smtp.port", "587");
+//
+//                String myAccountEmail = "duckeducationsystem@gmail.com";
+//                String password = "Vietnam+1";
+//
+//                Session session = Session.getInstance(properties, new Authenticator() {
+//                    @Override
+//                    protected PasswordAuthentication getPasswordAuthentication() {
+//                        return new PasswordAuthentication(myAccountEmail, password);
+//                    }
+//                });
+//                Message message = prepareMessage(session, myAccountEmail, recepient);
+//                try {
+//                    Transport.send(message);
+//                } catch (MessagingException ex) {
+//                    Logger.getLogger(JavaMailUtil.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//
+//                System.out.println("mess sent successfully");
+//            }
+//        });
+//        thread.start();
+//    }
 }

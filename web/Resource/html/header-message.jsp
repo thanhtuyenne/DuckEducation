@@ -3,7 +3,7 @@
         <div class="contener">
             <div class="side-left">
                 <span>
-                    <a href="${pageContext.request.contextPath}/${applicationScope['role']}" class="logo"><img id="logo_home" src="${pageContext.request.contextPath}/Resource/img/logo.svg" alt="logo" /></a>
+                    <a href="${pageContext.request.contextPath}/${sessionScope.role}" class="logo"><img id="logo_home" src="${pageContext.request.contextPath}/Resource/img/logo.svg" alt="logo" /></a>
                     <div id="DuckEdu">DUCK EDU</div>
                 </span>
                 <span>

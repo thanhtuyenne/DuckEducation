@@ -5,18 +5,16 @@
  */
 package Controller;
 
-import Servlet.SettingPassword;
+import JavaBean.Constants;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,8 +39,11 @@ public class Setting_site extends HttpServlet {
         String control = request.getParameter("changepass");
         if (control != null) {
             ServletContext sv = getServletContext();
-            JavaBean.User user = (JavaBean.User) sv.getAttribute("user");
+//            JavaBean.User user = (JavaBean.User) sv.getAttribute("user");
+            HttpSession session = request.getSession();
+            JavaBean.User user = (JavaBean.User) session.getAttribute(Constants.SESSION_USER_KEY);
             String username = user.getUsername();
+
             request.removeAttribute("message");
             String oldpw = request.getParameter("oldpw");
             String newpw = request.getParameter("newpw");
@@ -70,7 +71,6 @@ public class Setting_site extends HttpServlet {
                     return;
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(SettingPassword.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         RequestDispatcher dispatcher;

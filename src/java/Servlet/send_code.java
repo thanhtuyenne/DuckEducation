@@ -7,14 +7,12 @@ package Servlet;
 
 import Core.JavaMailUtil;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,14 +32,18 @@ public class send_code extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        System.out.println("Send Code");
+
+        String code = request.getParameter("code");
+
         String control = request.getParameter("control");
-        if (control != null) {
-            String code = request.getParameter("code");
+        if (control != null && code != null) {
+
+            System.out.println("do task");
+
             String codeVertify = JavaMailUtil.GetCode() + "";
             if (code.equals(codeVertify)) {
-                RequestDispatcher dispatcher;
-                dispatcher = getServletContext().getRequestDispatcher(lib.Web.NEW_PASSWORD);
-                dispatcher.forward(request, response);
+                response.sendRedirect(request.getContextPath() + "/new_password");
                 return;
             }
         }

@@ -21,7 +21,7 @@
         <div class="container">
             <div class="wrapper">
                 <div class="title"><span>Enter Vetify Code</span></div>
-                <form action="send_code" method="get">
+                <form action="send_code" method="post">
                     <div class="row">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Code" name="code" required>

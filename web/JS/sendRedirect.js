@@ -2,7 +2,7 @@ function sendRedirect(obj) {
     //$(obj).val()
     var value = $(obj).attr('value');
     var form = $('<form></form>');
-    form.attr("method", "get");
+    form.attr("method", "POST");
     form.attr("action", "control");
     var field = $('<input></input>');
     field.attr("name", "button-control");

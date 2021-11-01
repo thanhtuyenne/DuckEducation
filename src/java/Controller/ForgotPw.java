@@ -14,9 +14,11 @@ import java.util.regex.Pattern;
 import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,29 +35,36 @@ public class ForgotPw extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         System.out.println("Forgot password");
-        
+
         String control = request.getParameter("control");
         if (control != null) {
             String username = request.getParameter("username");
             System.out.println("username : " + username);
+            HttpSession session = request.getSession();
+
             String email;
             try {
                 email = DB.lib.DB_GetEmail(username);
                 if (!email.isEmpty()) {
-                    JavaMailUtil.sendMail(email);
+
+                    session.setAttribute("username", username);
+                    new JavaMailUtil(email);
                     int n = JavaMailUtil.GetCode();
+
+                    System.out.println("Code: " + n);
+
                     RequestDispatcher dispatcher;
                     dispatcher = getServletContext().getRequestDispatcher(lib.Web.SEND_CODE);
                     dispatcher.forward(request, response);
-                } else {
-
+                    return;
                 }
             } catch (Exception ex) {
-                Logger.getLogger(ForgotPw.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.print("have Error value: ");
+                System.out.println(ex.getMessage());
+                System.out.print(" at ---->");
             }
         }
         RequestDispatcher dispatcher;

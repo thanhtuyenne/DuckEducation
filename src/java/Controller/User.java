@@ -5,15 +5,14 @@
  */
 package Controller;
 
+import JavaBean.Constants;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.LinkedList;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,6 +34,10 @@ public class User extends HttpServlet {
 
         System.out.println("User");
 
+        HttpSession session = request.getSession();
+        JavaBean.User user = (JavaBean.User) session.getAttribute(Constants.SESSION_USER_KEY);
+        request.setAttribute("user", user);
+        
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(lib.Web.USER);
         dispatcher.forward(request, response);

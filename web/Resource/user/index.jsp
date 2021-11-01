@@ -63,20 +63,20 @@
                                             <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
                                         </div>-->
                 </div>
-                        <!--                <div id="user_row_2">
-                                            <div class="div_img">
-                                                <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
-                                            </div>
-                                            <div class="div_img">
-                                                <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
-                                            </div>
-                                            <div class="div_img">
-                                                <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
-                                            </div>
-                                            <div class="div_img">
-                                                <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
-                                            </div>
-                                        </div>-->
+                <!--                <div id="user_row_2">
+                                    <div class="div_img">
+                                        <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
+                                    </div>
+                                    <div class="div_img">
+                                        <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
+                                    </div>
+                                    <div class="div_img">
+                                        <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
+                                    </div>
+                                    <div class="div_img">
+                                        <img class="user_img" src="https://img.lovepik.com/element/45004/1281.png_860.png" alt=""> <br> Supject Name
+                                    </div>
+                                </div>-->
             </div>
         </div>
     </body>

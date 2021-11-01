@@ -7,11 +7,13 @@ package Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,16 +32,26 @@ public class new_password extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+
+        System.out.println("New Password");
+
+        String control = request.getParameter("control");
+        if (control != null) {
+            HttpSession session = request.getSession();
+            String username = (String) session.getAttribute("username");
+
             String pass = request.getParameter("password");
             String repass = request.getParameter("repassword");
             if (pass.equals(repass)) {
+                System.out.println("");
                 response.sendRedirect(request.getContextPath() + "/");
+                return;
             }
-            
         }
+
+        RequestDispatcher dispatcher;
+        dispatcher = getServletContext().getRequestDispatcher(lib.Web.NEW_PASSWORD);
+        dispatcher.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

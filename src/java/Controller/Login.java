@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servlet;
+package Controller;
 
+import JavaBean.Constants;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +35,9 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        System.out.println("Login");
+
         String control = request.getParameter("control");
         request.removeAttribute("message");
         if (control != null) {
@@ -43,20 +47,20 @@ public class Login extends HttpServlet {
             try {
                 JavaBean.User user = DB.lib.DB_Login(username, password);
                 if (!user.getRole().isEmpty()) {
-                    ServletContext sv = getServletContext();
-                    sv.setAttribute("user", user);
-                    sv.setAttribute("role", user.getRole());
+                    HttpSession session = request.getSession();
+                    session.setAttribute(Constants.SESSION_USER_KEY, user);
+                    session.setAttribute("role", user.getRole());
+//                    ServletContext sv = getServletContext();
+//                    sv.setAttribute("user", user);
+//                    sv.setAttribute("role", user.getRole());
                     response.sendRedirect(request.getContextPath() + "/student");
-                } else {
-                    request.setAttribute("message", "Username or password Wrong!");
-                    RequestDispatcher dispatcher;
-                    dispatcher = getServletContext().getRequestDispatcher(lib.Web.LOGIN);
-                    dispatcher.forward(request, response);
+                    return;
                 }
-                return;
             } catch (Exception ex) {
-                ex.printStackTrace();
-                request.setAttribute("message", ex.getMessage());
+                String message = ex.getMessage();
+                System.out.print("have Error value: ".concat(message));
+                request.setAttribute("message", message);
+                System.out.print(" at ---->");
             }
         }
         RequestDispatcher dispatcher;

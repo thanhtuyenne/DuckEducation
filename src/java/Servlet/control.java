@@ -31,7 +31,7 @@ public class control extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        System.out.print("Servlet control call ---->");
+        System.out.print("\nServlet control call ---->");
 
         String pattern = request.getParameter("button-control");
         switch (pattern) {

@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,12 +31,13 @@ public class Log_out extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         System.out.println("Log out");
-        
-        request.getSession().removeAttribute("role");
-        ServletContext sv = getServletContext();
-        sv.removeAttribute("user");
+
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+        session.removeAttribute("role");
+
         response.sendRedirect(request.getContextPath());
     }
 
